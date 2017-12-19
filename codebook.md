@@ -12,9 +12,9 @@ The study han also randomly partitioned into the data into two sets, training da
 
 Each set consisted of 3 files:
 
-  * X_<set name>.txt: 561 features (columns) per row with no header row.
-  * y_<set name>.txt: single column (activity code) for each row in the X_<set name>.txt file.
-  * subject__<set name>.txt: single column (subject ID) for each row in the X_<set name>.txt file. 
+  * X_{set name}.txt: 561 features (columns) per row with no header row.
+  * y_{set name}.txt: single column (activity code) for each row in the X_{set name}.txt file.
+  * subject_{set name}.txt: single column (subject ID) for each row in the X_{set name}.txt file. 
   
 The column names were contained in the 'features.txt' file.
 
@@ -23,8 +23,8 @@ The descriptive names for the activity codes were contained in the 'activity_lab
 After the X_<set name>.txt are loaded with read.table the following actions are performed:
 
   * The columns corresponding to mean() and std() variables are selected and renamed.
-  * The subject ID is added from subject__<set name>.txt with cbind()
-  * The activity code is added from y_<set name>.txt with cbind()
+  * The subject ID is added from subject_{set name}.txt with cbind()
+  * The activity code is added from y_{set name}.txt with cbind()
   * The activty description is merged from activity_labels.txt
   * A unique id is added to each row
   
@@ -36,14 +36,14 @@ The data is then reshaped for the mean() and std() variables by:
   * grouping by subject, activty and signal and summarising mean of mean() and std() to produce the final dataset as illustrated below: 
 
 
-subject | activity  |           signal  |     mean  |      std
+subject | activity | signal  | mean | std
 --- | --- | --- | --- | --- 
-      1 |  LAYING | freq-BodyAccJerk-X | -0.9570739 | -0.9641607
-      1 |  LAYING | freq-BodyAccJerk-Y | -0.9224626 | -0.9322179
-      1 |  LAYING | freq-BodyAccJerk-Z | -0.9480609 | -0.9605870
-      1 |  LAYING |    freq-BodyAccMag | -0.8617676 | -0.7983009
-      1 |  LAYING |     freq-BodyAcc-X | -0.9390991 | -0.9244374
-      1 |  LAYING |     freq-BodyAcc-Y | -0.8670652 | -0.8336256
+ 1 |  LAYING | freq-BodyAccJerk-X | -0.9570739 | -0.9641607
+ 1 |  LAYING | freq-BodyAccJerk-Y | -0.9224626 | -0.9322179
+ 1 |  LAYING | freq-BodyAccJerk-Z | -0.9480609 | -0.9605870
+ 1 |  LAYING |    freq-BodyAccMag | -0.8617676 | -0.7983009
+ 1 |  LAYING |     freq-BodyAcc-X | -0.9390991 | -0.9244374
+ 1 |  LAYING |     freq-BodyAcc-Y | -0.8670652 | -0.8336256
       
 Where: 
 
@@ -54,9 +54,9 @@ Where:
   * std: average std()
 
 The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2), e.g.
-freq-Body*Acc*-X.
+freq-Body**Acc**-X.
 
-The gyroscope units are rad/seg , e.g. time-Body*Gyro*-X.
+The gyroscope units are rad/seg , e.g. time-Body**Gyro**-X.
 
 ## Citation 
 
