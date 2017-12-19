@@ -20,7 +20,7 @@ The column names were contained in the 'features.txt' file.
 
 The descriptive names for the activity codes were contained in the 'activity_labels.txt' file.
 
-After the X_<set name>.txt are loaded with read.table the following actions are performed:
+After the X_{set name}.txt are loaded with read.table the following actions are performed:
 
   * The columns corresponding to mean() and std() variables are selected and renamed.
   * The subject ID is added from subject_{set name}.txt with cbind()
